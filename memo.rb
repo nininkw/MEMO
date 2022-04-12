@@ -12,7 +12,7 @@ if memo_type == "1"
   puts "完了したらしたらCtrl + Dを押します"
 
   CSV.open("#{file_name}.csv","w") do |csv|
-    csv << [gets.chomp]
+    csv << readlines
   end 
 elsif memo_type == "2"
   puts "拡張子を除いた編集するファイル名を入力してください"
@@ -23,7 +23,7 @@ elsif memo_type == "2"
   puts "完了したらしたらCtrl + Dを押します"
 
   CSV.open("#{exist_file_name}.csv","a") do |csv|
-    csv << [gets.chomp]
+    csv << readlines
   end
 else
   puts "1(新規でメモを作成) 2(既存のメモ編集する)"
